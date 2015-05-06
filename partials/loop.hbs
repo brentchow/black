@@ -1,0 +1,17 @@
+<h1 class="words-title">WORDS</h1>
+
+{{#foreach posts}}
+
+<a href="{{url}}">
+	<div class="post">
+		<div class="post-title">
+			<h2>{{title}}</h2>
+		</div>
+		<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+	</div>
+</a>
+
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}

@@ -1,0 +1,36 @@
+{{!< default}}
+
+{{#post}}
+
+<header {{#if image}}class="post-header-container-bg-true"{{/if}}>
+	{{#if image}}
+		<div class="post-header-background" style="background-image: url({{image}})">
+	{{/if}}
+	<nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+		{{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+		{{#if @blog.navigation}}
+			<div class="header">
+				<a href="/"><span class="logo">{{@blog.description}}</span></a>
+			</div>
+		{{/if}}
+	</nav>
+	{{#if image}}
+		</div>
+	{{/if}}
+</header>
+
+<main class="content" role="main">
+	<article class="{{post_class}}">
+		<section class="post-content">
+			<h1 class="post-title">{{title}}</h1>
+			<h4><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">Posted on {{date format="MMMM D, YYYY"}}</time>{{#if tags}}// {{#foreach tags}}<span class="tags"><a href="{{url}}#words">{{name}}</a></span>{{/foreach}}{{/if}}</h4>
+			{{content}}
+		</section>
+		<footer class="footer">
+			<div id="shareButton"></div>
+			<a href="{{@blog.url}}/#words"><div class="footer-link">MORE WORDS</div></a>
+		</footer>
+	</article>
+</main>
+
+{{/post}}

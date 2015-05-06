@@ -1,0 +1,15 @@
+{{!< default}}
+
+
+<div class="container banner-container{{#if @blog.cover}} banner-background" style="background-image: url({{@blog.cover}})"><div class="banner-background-overlay">{{else}}">{{/if}}
+	<div class="banner">
+		{{#if @blog.logo}}<a href="{{@blog.url}}"><img src="{{@blog.logo}}" class="banner-logo" alt="Blog Logo" /></a>{{/if}}
+		<h1 class="banner-title">{{@blog.title}}</h1>
+		{{navigation}}
+	</div>
+	{{#if @blog.cover}}</div>{{/if}}
+</div>
+
+<main id="words" class="posts-list" role="main">
+	{{> "loop"}}
+</main>
