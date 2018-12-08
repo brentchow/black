@@ -2,11 +2,11 @@
 
 {{#post}}
 
-<header {{#if image}}class="post-header-container-bg-true"{{/if}}>
-	{{#if image}}
-		<div class="post-header-background" style="background-image: url({{image}})">
+<header {{#if feature_image}}class="post-header-container-bg-true"{{/if}}>
+	{{#if feature_image}}
+		<div class="post-header-background" style="background-image: url({{img_url feature_image}})">
 	{{/if}}
-	<nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
+	<nav class="main-nav {{#if feature_image}}overlay{{/if}} clearfix">
 		{{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
 		{{#if @blog.navigation}}
 			<div class="header">
@@ -14,7 +14,7 @@
 			</div>
 		{{/if}}
 	</nav>
-	{{#if image}}
+	{{#if feature_image}}
 		</div>
 	{{/if}}
 </header>
